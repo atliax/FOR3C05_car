@@ -1,7 +1,13 @@
-//******Robot Functions  ************
-#include <Servo.h> //Servo er innbyggður í Arduino en það þarf að stofna servoMain sem er þá eintak af Servo
-Servo servoMain;   // ServoMain hefur t.d. fallið write(int stefna)
-//******************* Skilgreining á tengjum og breytum **************
+//*************************** Robot Functions **********************************
+
+// Servo er innbyggður í Arduino en það þarf að stofna servoMain sem er þá
+// eintak af Servo
+// servoMain hefur t.d. fallið write(int stefna)
+#include <Servo.h>
+Servo servoMain;
+
+//********************** Skilgreining á tengjum og breytum *********************
+
 int motorVpwm_ = 5;
 int motorVgir_ = 9;
 int motorVpwm; // Geymir stöðu motorV  (analogWrite(motorVpwm_,motorVpwm);)
@@ -21,16 +27,19 @@ int sonarTrigger_ = 7; // Sendir 10us breiðan 40kHz sónarpúls
 int sonarEcho_ = 8;    // Tekur á móti SONAR púlsinum
 int lagNr;             // Synir hvaða lag er spilad
 int randomTurn = 1;
-//****************************Lengdir og Tímar
-unsigned int lengdV;
-unsigned int lengdH;
-unsigned int lengdMax = 0;
-int lengdX = 0;
-unsigned long time; // Notuð með millis() fallinu til að ákveða spilatíma laga
-unsigned long timeX;
 
-//******** Reikna púlsbreidd frá gráðum og kalla síðan á servoMain.write(stefna)
-//*******
+//*************************** Lengdir og Tímar *********************************
+
+// unsigned int lengdV;
+// unsigned int lengdH;
+unsigned int lengdMax = 0;
+// int lengdX = 0;
+unsigned long time; // Notuð með millis() fallinu til að ákveða spilatíma laga
+// unsigned long timeX;
+
+// ****************************** Föll *****************************************
+
+// Reikna púlsbreidd frá gráðum og kalla síðan á servoMain.write(stefna)
 void reiknaPulsBreidd(int gradur, int snunAtt) // réttsaelis=1 rangsaelis=-1
 {
     int stefna = gradur + 90;
@@ -50,30 +59,29 @@ void reiknaPulsBreidd(int gradur, int snunAtt) // réttsaelis=1 rangsaelis=-1
     servoMain.write(stefna);
 }
 
-//******************** unsigned int lengd() Reiknar fjarlaegd ad endurvarpi
-//*************** Athugid ad nota Tetta fall ekki nema SONAR se tengdur annars
-// bídur tolvan endalaust
-
-unsigned int lengd() // Reikna lengd ad endurvarpi
-{
+// Reiknar fjarlaegd ad endurvarpi
+// Athugid ad nota Tetta fall ekki nema SONAR se
+// tengdur annars bidur tolvan endalaust
+unsigned int lengd() {
     unsigned int tmp;
 
-    // Setja trigger utgang í hastoðu (Byrja StartPuls)
+    // Setja trigger utgang i hastodu (Byrja StartPuls)
     digitalWrite(sonarTrigger_, HIGH);
 
-    // bíða í 10 us  (Start púls er 10us breiður)
+    // bida i 10 us  (Start puls er 10us breidur)
     delayMicroseconds(10);
 
-    // Setja trigger útgang í lastodu (enda startpuls)
+    // Setja trigger utgang i lagstodu (enda startpuls)
     digitalWrite(sonarTrigger_, LOW);
 
     tmp = pulseIn(sonarEcho_, HIGH);
-    tmp = tmp * 0.01715; // tmp*34300cm/s /2 =tmp*0,01715cm/us
+    tmp = tmp * 0.01715; // tmp*34300cm/s / 2 = tmp*0,01715cm/us
 
-    // Skila lengdinni til baka til þess sem kallaði á fall
+    // skila ut lengd
     return tmp;
 }
 
+// keyra bil afram
 void startCar() {
     digitalWrite(motorVgir_, HIGH);
     digitalWrite(motorHgir_, LOW);
@@ -81,31 +89,36 @@ void startCar() {
     analogWrite(motorHpwm_, VgrunnH);
 }
 
+// bremsa bil
 void breakCar() {
     analogWrite(motorVpwm_, 0);
     analogWrite(motorHpwm_, 0);
 }
 
+// stoppa bil
 void stopCar() {
     digitalWrite(motorVgir_, HIGH);
     digitalWrite(motorHgir_, LOW);
 
     for (int i = VgrunnH; i <= 0; i -= 10) {
-        analogWrite(motorVpwm_, 150);
-        analogWrite(motorHpwm_, 150);
+        analogWrite(motorVpwm_, i);
+        analogWrite(motorHpwm_, i);
         delay(100);
     }
 }
 
+// bakka bil
 void backCar() {
     stopCar();
     delay(500);
+
     digitalWrite(motorVgir_, LOW);
     digitalWrite(motorHgir_, HIGH);
     analogWrite(motorVpwm_, VgrunnV);
     analogWrite(motorHpwm_, VgrunnH);
 }
 
+// snua bil til vinstri
 void driveLeft() {
     digitalWrite(motorVgir_, LOW);
     digitalWrite(motorHgir_, LOW);
@@ -113,6 +126,7 @@ void driveLeft() {
     analogWrite(motorHpwm_, VgrunnH);
 }
 
+// snua bil til haegri
 void driveRight() {
     digitalWrite(motorVgir_, HIGH);
     digitalWrite(motorHgir_, HIGH);
