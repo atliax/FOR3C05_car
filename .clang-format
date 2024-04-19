@@ -1,0 +1,14 @@
+---
+# Bla
+BasedOnStyle: LLVM
+IndentWidth: 4
+---
+#Language: Cpp
+#AlignArrayOfStructures: Right
+#AlignConsecutiveAssignments: Consecutive
+#AlignConsecutiveBitfields: Consecutive
+#AlignConsecutiveDeclarations: Consecutive
+#AlignConsecutiveMacros: Consecutive
+#AlignEscapedNewLines: Left
+#AlignTrailingComments:
+#  Kind: Always
