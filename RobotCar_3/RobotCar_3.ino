@@ -73,10 +73,9 @@ void loop() {
 
     // ef það er aðskotahlutur minna en 40cm framan vid bilinn
     while (lengd() < 40) {
-        stopCar();
+        //stopCar();
         // skanna og velja átt
-
-        delay(500);
+        //delay(500);
         backCar();
         delay(200);
         stopCar();
