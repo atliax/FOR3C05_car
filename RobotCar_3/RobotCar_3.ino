@@ -75,7 +75,40 @@ void loop() {
     // ef það er aðskotahlutur minna en 40cm framan vid bilinn
     while (lengd() < 40) {
         stopCar();
+        // skanna og velja átt
 
+        int vinstri = 0;
+
+        int haegri = 0;
+
+        reiknaPulsBreidd(-85, -1);
+
+        vinstri = lengd();
+
+        delay(1000);
+
+        reiknaPulsBreidd(85, -1);
+
+        haegri = lengd();
+
+        delay(1500);
+
+        reiknaPulsBreidd(0, -1);
+
+        if (vinstri > haegri)
+
+        {
+
+            driveLeft();
+
+        }
+
+        else
+
+        {
+
+            driveRight();
+        }
         // kikja til vinstri
 
         // kikja til haegri
