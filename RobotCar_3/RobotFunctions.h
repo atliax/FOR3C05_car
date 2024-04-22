@@ -15,8 +15,8 @@ int servo_=10;      //Geymir númer servo tengis
 int VgrunnV=125;   //Upphafsgildi mótoranna
 int VgrunnH=125;
 */
-int VgrunnV=125;   //Upphafsgildi mótoranna
-int VgrunnH=123;
+int VgrunnV=150;   //Upphafsgildi mótoranna
+int VgrunnH=148;
 
 int TXspilari_=4;  //Sendir skipanir til mp3 spilarans
 int RXspilari_=2;  //Tekur við skipunum frá mp3 spilara
