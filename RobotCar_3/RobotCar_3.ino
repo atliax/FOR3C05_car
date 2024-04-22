@@ -98,7 +98,7 @@ void loop() {
         }
 
         // Gefa tíma til að beygja ca +/- 90°
-        delay(300);
+        delay(350);
         startCar();
 
         delay(1000);
