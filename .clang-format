@@ -1,14 +1,8 @@
 ---
-# Bla
+# Byrja með LLVM sem er fínt default, nema setja tab stop í 4
 BasedOnStyle: LLVM
 IndentWidth: 4
 ---
 #Language: Cpp
-#AlignArrayOfStructures: Right
-#AlignConsecutiveAssignments: Consecutive
-#AlignConsecutiveBitfields: Consecutive
-#AlignConsecutiveDeclarations: Consecutive
-#AlignConsecutiveMacros: Consecutive
-#AlignEscapedNewLines: Left
-#AlignTrailingComments:
-#  Kind: Always
+# Bæta svo hérna við eftir þörfum til að stilla hluti sem koma vitlaust út
+
