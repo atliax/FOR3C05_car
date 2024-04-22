@@ -47,7 +47,7 @@ void setup() {
     // timeX = time;
 
     // snua SONAR beint framm, í þessum bíl er leiðrétt um X gráður - TODO
-    reiknaPulsBreidd(0, -1);
+    reiknaPulsBreidd(-5, -1);
 
     // lengdX = lengd();
 }
