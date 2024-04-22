@@ -16,7 +16,7 @@ int VgrunnV=125;   //Upphafsgildi mótoranna
 int VgrunnH=125;
 */
 int VgrunnV=150;   //Upphafsgildi mótoranna
-int VgrunnH=147;
+int VgrunnH=145;
 
 int TXspilari_=4;  //Sendir skipanir til mp3 spilarans
 int RXspilari_=2;  //Tekur við skipunum frá mp3 spilara
