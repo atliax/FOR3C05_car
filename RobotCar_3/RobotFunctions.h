@@ -81,8 +81,8 @@ void stopCar()
 {  
   digitalWrite(motorVgir_,HIGH);
   digitalWrite(motorHgir_,LOW);
-  analogWrite(motorVpwm_,150);
-  analogWrite(motorHpwm_,150);
+  analogWrite(motorVpwm_,VgrunnV);
+  analogWrite(motorHpwm_,VgrunnH);
 
   for(int i = 120; i >= 0; i-=30)
   {
@@ -94,7 +94,7 @@ void stopCar()
 void backCar()
 {
    stopCar();
-   delay(500);
+   delay(1000);
    digitalWrite(motorVgir_,LOW);
    digitalWrite(motorHgir_,HIGH);
    analogWrite(motorVpwm_,VgrunnV);
