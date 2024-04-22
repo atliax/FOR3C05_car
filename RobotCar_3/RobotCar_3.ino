@@ -92,7 +92,7 @@ void loop() {
         delay(1500);
         reiknaPulsBreidd(-12, -1);
 
-        if (vinstri < haegri) {
+        if (vinstri > haegri) {
             driveLeft();
         } else {
             driveRight();

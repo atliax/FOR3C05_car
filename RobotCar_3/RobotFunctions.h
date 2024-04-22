@@ -101,14 +101,14 @@ void backCar()
    analogWrite(motorHpwm_,VgrunnH); 
 }
 
-void driveLeft()
+void driveRight()
 {
     digitalWrite(motorVgir_,LOW);
     digitalWrite(motorHgir_,LOW);
     analogWrite(motorVpwm_,VgrunnV);
     analogWrite(motorHpwm_,VgrunnH);  
 }
-void driveRight()
+void driveLeft()
 {
     digitalWrite(motorVgir_,HIGH);
     digitalWrite(motorHgir_,HIGH);
