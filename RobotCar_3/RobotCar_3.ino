@@ -54,8 +54,8 @@ void setup() {
 
 //*************************** Keyrslulykkjan **********************
 void loop() {
-    // reiknaPulsBreidd(0, -1);
-    // delay(100);
+    reiknaPulsBreidd(0, -1);
+    delay(100);
 
     // Keyra bil afram
     startCar();
