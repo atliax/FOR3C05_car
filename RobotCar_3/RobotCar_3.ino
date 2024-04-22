@@ -7,9 +7,9 @@
 // er orvhentur                                                          *
 //***********************************************************************/
 #include "Arduino.h"
+#include <SoftwareSerial.h>
 #include "MyDFPlayer.h"
 #include "RobotFunctions.h"
-#include <SoftwareSerial.h>
 //Atli
 //************************** uppsetning a forritinu *****************
 void setup() {
