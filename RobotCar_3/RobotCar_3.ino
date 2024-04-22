@@ -7,8 +7,8 @@
 // er orvhentur                                                          *
 //***********************************************************************/
 #include "Arduino.h"
-#include "RobotFunctions.h"
 #include "MyDFPlayer.h"
+#include "RobotFunctions.h"
 
 //************************** uppsetning a forritinu *****************
 void setup() {
@@ -36,7 +36,7 @@ void setup() {
     mp3_set_volume(20);
     delay(100);
 
-    // mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
+    mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
     delay(5000);
 
     // mp3_play_track(1); // 1. Riding along in my automobile
