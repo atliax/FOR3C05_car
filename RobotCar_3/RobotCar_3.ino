@@ -8,7 +8,6 @@
 //***********************************************************************/
 #include "Arduino.h"
 #include "RobotFunctions.h"
-#include <SoftwareSerial.h>
 #include "MyDFPlayer.h"
 
 //************************** uppsetning a forritinu *****************

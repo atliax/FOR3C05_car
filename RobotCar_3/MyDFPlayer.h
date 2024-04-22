@@ -1,5 +1,6 @@
 //*********************** MyDFPlayer.h ***************************
 #include "Arduino.h"
+#include <SoftwareSerial.h>
 
 // Athugið að TX (4)á Arduino tengist við RX (2) a DFPlayer
 // og að RX (2) á Arduino tengist BUSY (16) a DFPlayer
