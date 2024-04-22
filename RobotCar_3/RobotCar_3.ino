@@ -84,7 +84,7 @@ void loop() {
         vinstri = lengd();
 
         delay(1000);
-        reiknaPulsBreidd(77, -1);
+        reiknaPulsBreidd(73, -1);
 
         haegri = lengd();
 
