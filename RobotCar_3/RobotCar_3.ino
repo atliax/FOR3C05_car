@@ -7,10 +7,10 @@
 // er orvhentur                                                          *
 //***********************************************************************/
 #include "Arduino.h"
-#include <SoftwareSerial.h>
 #include "MyDFPlayer.h"
 #include "RobotFunctions.h"
-//Atli
+#include <SoftwareSerial.h>
+
 //************************** uppsetning a forritinu *****************
 void setup() {
     pinMode(motorVpwm_, OUTPUT);
@@ -37,10 +37,10 @@ void setup() {
     mp3_set_volume(20);
     delay(100);
 
-    mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
+    // mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
     delay(5000);
 
-    mp3_play_track(1); // 1. Riding along in my automobile
+    // mp3_play_track(1); // 1. Riding along in my automobile
     lagNr = 2;
 
     // Timar
@@ -69,7 +69,7 @@ void loop() {
             lagNr = 1;
         }
         // spila naesta lag
-        mp3_play_track(lagNr++);
+        // mp3_play_track(lagNr++);
     }
 
     // ef það er aðskotahlutur minna en 40cm framan vid bilinn
@@ -78,7 +78,6 @@ void loop() {
         // skanna og velja átt
 
         int vinstri = 0;
-
         int haegri = 0;
 
         reiknaPulsBreidd(-85, -1);
@@ -86,36 +85,18 @@ void loop() {
         vinstri = lengd();
 
         delay(1000);
-
         reiknaPulsBreidd(85, -1);
 
         haegri = lengd();
 
         delay(1500);
-
         reiknaPulsBreidd(0, -1);
 
-        if (vinstri > haegri)
-
-        {
-
+        if (vinstri > haegri) {
             driveLeft();
-
-        }
-
-        else
-
-        {
-
+        } else {
             driveRight();
         }
-        // kikja til vinstri
-
-        // kikja til haegri
-
-        // snua servo fram
-
-        // beygja i retta att
 
         // Gefa tíma til að beygja ca +/- 90°
         delay(300);
