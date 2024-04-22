@@ -89,7 +89,7 @@ void loop() {
         haegri = lengd();
 
         delay(1500);
-        reiknaPulsBreidd(0, -1);
+        reiknaPulsBreidd(-2, -1);
 
         if (vinstri > haegri) {
             driveLeft();
