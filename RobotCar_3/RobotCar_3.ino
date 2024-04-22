@@ -76,6 +76,11 @@ void loop() {
         stopCar();
         // skanna og velja átt
 
+        delay(500);
+        backCar();
+        delay(200);
+        stopCar();
+
         int vinstri = 0;
         int haegri = 0;
 
