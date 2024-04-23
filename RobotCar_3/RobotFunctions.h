@@ -78,8 +78,8 @@ void breakCar()
 }
 void stopCar()
 {  
-  digitalWrite(motorVgir_,HIGH);
-  digitalWrite(motorHgir_,LOW);
+  //digitalWrite(motorVgir_,HIGH);
+  //digitalWrite(motorHgir_,LOW);
   analogWrite(motorVpwm_,VgrunnV);
   analogWrite(motorHpwm_,VgrunnH);
 
