@@ -93,7 +93,7 @@ void stopCar()
 void backCar()
 {
    stopCar();
-   delay(1000);
+   delay(500);
    digitalWrite(motorVgir_,LOW);
    digitalWrite(motorHgir_,HIGH);
    analogWrite(motorVpwm_,VgrunnV);
