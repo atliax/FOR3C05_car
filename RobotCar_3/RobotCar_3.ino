@@ -75,7 +75,7 @@ void loop() {
     while (lengd() < 40) {
         backCar();
 
-        delay(500);
+        delay(200);
 
         stopCar();
 
