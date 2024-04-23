@@ -65,7 +65,7 @@ unsigned int lengd() //Reikna lengd ad endurvarpi
    return tmp;                //Skila lengdinni til baka til þess sem kallaði á fall
 }
 
-void startCar()
+void driveCar()
 {
    digitalWrite(motorVgir_,HIGH);
    digitalWrite(motorHgir_,LOW);

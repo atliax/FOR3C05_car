@@ -58,7 +58,7 @@ void loop() {
     delay(100);
 
     // Keyra bil afram
-    startCar();
+    driveCar();
     delay(100);
 
     // Ef Spilari er upptekinn þá er RXspilari = 0
@@ -104,7 +104,7 @@ void loop() {
 
         // Gefa tíma til að beygja ca +/- 90°
         delay(350);
-        startCar();
+        driveCar();
 
         delay(1000);
     }
