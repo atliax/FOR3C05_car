@@ -34,20 +34,24 @@ int lengdX=0;
 unsigned long time;  //Notuð með millis() fallinu til að ákveða spilatíma laga                         
 unsigned long timeX;
 
-//******** Reikna púlsbreidd frá gráðum og kalla síðan á servoMain.write(stefna) *******
-void reiknaPulsBreidd(int gradur,int snunAtt) //réttsaelis=1 rangsaelis=-1
+// Reikna púlsbreidd frá gráðum og kalla síðan á servoMain.write(stefna)
+void reiknaPulsBreidd(int gradur, int snunAtt) // réttsaelis=1 rangsaelis=-1
 {
-   int stefna;
-   if(snunAtt>=0)
-      stefna=gradur+90;
-   else
-      stefna=-1*gradur+90;
-     
-   if(stefna<0)
-      stefna=0;
-   if(stefna>180)
-      stefna=180;
-   servoMain.write(stefna);    
+    int stefna = gradur + 90;
+
+    if (snunAtt < 0) {
+        stefna *= -1;
+    }
+
+    if (stefna < 0) {
+        stefna = 0;
+    }
+
+    if (stefna > 180) {
+        stefna = 180;
+    }
+
+    servoMain.write(stefna);
 }
 
 //******************** unsigned int lengd() Reiknar fjarlaegd ad endurvarpi ***************
@@ -84,7 +88,7 @@ void stopCar()
   analogWrite(motorVpwm_,VgrunnV);
   analogWrite(motorHpwm_,VgrunnH);
 
-  for(int i = 120; i >= 0; i-=30)
+  for(int i = 120; i >= 0; i-=10)
   {
     delay(100);
     analogWrite(motorVpwm_,i);
