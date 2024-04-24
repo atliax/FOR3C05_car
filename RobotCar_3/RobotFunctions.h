@@ -17,8 +17,8 @@ int motorHgir_ = 12;
 int motorHpwm; // Geymir stöðu motorH  (analogWrite(motorHpwm_,motorHpwm);)
 int servo_pin = 10; // Geymir númer servo tengis
 
-int VgrunnV = 250; // Upphafsgildi mótoranna
-int VgrunnH = 248;
+int VgrunnV = 150; // Upphafsgildi mótoranna
+int VgrunnH = 148;
 
 int TXspilari_ = 4; // Sendir skipanir til mp3 spilarans
 int RXspilari_ = 2; // Tekur við skipunum frá mp3 spilara
