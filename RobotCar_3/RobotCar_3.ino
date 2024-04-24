@@ -48,12 +48,12 @@ void setup() {
     time = millis(); // Setur time breytuna á tíma liðinn frá starti
 
     // snua SONAR beint fram, í þessum bíl er leiðrétt um 12 gráður - TODO
-    turnSonar(-12, -1);
+    turnSonar(SONAR_FORWARD, -1);
 }
 
 //*************************** Keyrslulykkjan **********************
 void loop() {
-    turnSonar(-12, -1);
+    turnSonar(SONAR_FORWARD, -1);
     delay(100); // delay herna er kannski otharfi
 
     // Keyra bil afram
@@ -68,7 +68,7 @@ void loop() {
         }
 
         // spila naesta lag
-        // mp3_play_track(lagNr++);
+        mp3_play_track(lagNr++);
     }
 
     int delaysec = 15;
@@ -90,19 +90,19 @@ void loop() {
         int haegri = 0;
 
         // delay(1000); // delay herna er sennilega otharfi
-        turnSonar(-85, -1);
+        turnSonar(SONAR_LEFT, -1);
         delay(1000);
         vinstri = distanceFromSonar();
 
         // delay(1000);
 
-        turnSonar(60, -1);
+        turnSonar(SONAR_RIGHT, -1);
         delay(1000);
         haegri = distanceFromSonar();
 
         // delay(1500);
 
-        turnSonar(-12, -1);
+        turnSonar(SONAR_FORWARD, -1);
 
         if (vinstri > haegri) {
             turnLeft();
