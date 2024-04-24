@@ -27,9 +27,11 @@ int sonarTrigger_ = 7; // Sendir 10us breiðan 40kHz sónarpúls
 int sonarEcho_ = 8;    // Tekur á móti SONAR púlsinum
 int lagNr;             // Synir hvaða lag er spilad
 
+/*
 #define SONAR_LEFT -85
 #define SONAR_FORWARD -12
 #define SONAR_RIGHT 60
+*/
 
 //*************************** Lengdir og Tímar *********************************
 

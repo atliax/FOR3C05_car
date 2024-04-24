@@ -51,12 +51,12 @@ void setup() {
     time = millis(); // Setur time breytuna á tíma liðinn frá starti
 
     // snua SONAR beint fram, í þessum bíl er leiðrétt um 12 gráður - TODO
-    turnSonar(SONAR_FORWARD, -1);
+    turnSonar(-12, -1);
 }
 
 //*************************** Keyrslulykkjan **********************
 void loop() {
-    turnSonar(SONAR_FORWARD, -1);
+    turnSonar(-12, -1);
      delay(100); // delay herna er kannski otharfi
 
     // Keyra bil afram
@@ -89,17 +89,17 @@ void loop() {
         int haegri = 0;
 
         delay(500); // delay herna er sennilega otharfi
-        turnSonar(SONAR_LEFT, -1);
+        turnSonar(-85, -1);
         vinstri = distanceFromSonar();
 
         delay(2000);
 
-        turnSonar(SONAR_RIGHT, -1);
+        turnSonar(60, -1);
         haegri = distanceFromSonar();
 
         delay(500);
 
-        turnSonar(SONAR_FORWARD, -1);
+        turnSonar(-12, -1);
 
         if (vinstri > haegri) {
             turnLeft();
