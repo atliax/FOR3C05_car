@@ -112,7 +112,7 @@ void loop() {
 
         // Gefa tíma til að beygja ca +/- 90°
         // TODO - stadfesta ad timinn se godur
-        delay(450);
+        delay(400);
 
         driveForward();
 
