@@ -96,7 +96,7 @@ void loop() {
         //delay(1000);
 
         turnSonar(60, -1);
-        delay(2000);
+        delay(1000);
         haegri = distanceFromSonar();
 
         //delay(1500);
