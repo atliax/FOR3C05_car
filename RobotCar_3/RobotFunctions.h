@@ -26,7 +26,6 @@ int RXspilari_ = 2; // Tekur við skipunum frá mp3 spilara
 int sonarTrigger_ = 7; // Sendir 10us breiðan 40kHz sónarpúls
 int sonarEcho_ = 8;    // Tekur á móti SONAR púlsinum
 int lagNr;             // Synir hvaða lag er spilad
-// int randomTurn = 1;
 
 #define SONAR_LEFT -85
 #define SONAR_FORWARD -12
@@ -38,7 +37,7 @@ int lagNr;             // Synir hvaða lag er spilad
 // unsigned int lengdH;
 // unsigned int lengdMax = 0;
 // int lengdX = 0;
-unsigned long time; // Notuð með millis() fallinu til að ákveða spilatíma laga
+unsigned long time; 
 // unsigned long timeX;
 
 // ****************************** Föll *****************************************
