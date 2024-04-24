@@ -87,7 +87,7 @@ void loop() {
         int haegri = 0;
 
         // delay(500); // delay herna er sennilega otharfi
-        snuaSonar(SONAR_LEFT, -1);
+        turnSonar(SONAR_LEFT, -1);
         vinstri = distanceFromSonar();
 
         delay(1000);
