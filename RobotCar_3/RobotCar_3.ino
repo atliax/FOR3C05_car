@@ -122,5 +122,6 @@ void loop() {
         stopCar();
         driveBackwards();
         delay(1000);
+        time = millis();
     }
 }
