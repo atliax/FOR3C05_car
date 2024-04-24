@@ -98,7 +98,7 @@ void stopCar() {
     analogWrite(motorVpwm_, VgrunnV);
     analogWrite(motorHpwm_, VgrunnH);
 
-    for (int i = 120; i >= 0; i -= 10) {
+    for (int i = 120; i >= 0; i -= 20) {
         delay(100);
         analogWrite(motorVpwm_, i);
         analogWrite(motorHpwm_, i);

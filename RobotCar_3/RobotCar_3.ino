@@ -80,7 +80,7 @@ void loop() {
         delay(100); // i raun 200 vegna delay(100) i stopCar()
 
         driveBackwards();
-        delay(200);
+        //delay(200);
 
         stopCar();
         // herna er 100ms delay vegna stopCar()
@@ -88,7 +88,7 @@ void loop() {
         int vinstri = 0;
         int haegri = 0;
 
-        delay(1000); // delay herna er sennilega otharfi
+        //delay(1000); // delay herna er sennilega otharfi
         turnSonar(-85, -1);
         vinstri = distanceFromSonar();
 
@@ -113,6 +113,6 @@ void loop() {
 
         driveForward();
 
-        delay(1000); // delay herna er kannski otharfi
+        //delay(1000); // delay herna er kannski otharfi
     }
 }
