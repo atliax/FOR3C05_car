@@ -74,13 +74,17 @@ void loop() {
         // mp3_play_track(lagNr++);
     }
 
+    int delaysec = 15;
+
     // ef það er aðskotahlutur minna en 40cm framan vid bilinn
-    while (distanceFromSonar() < 40) {
+    while (distanceFromSonar() < 40 || (millis() - time >= (delaysec * 1000))) {
         stopCar();
         delay(100); // i raun 200 vegna delay(100) i stopCar()
 
         driveBackwards();
-        // delay(200);
+        if (millis() - time >= (delaysec * 1000)) {
+            delay(1000);
+        }
 
         stopCar();
         // herna er 100ms delay vegna stopCar()
@@ -116,12 +120,16 @@ void loop() {
         driveForward();
 
         delay(1000); // delay herna er kannski otharfi
+
+        // time = millis();
     }
 
+    /*
     if (millis() - time >= (15 * 1000)) {
         stopCar();
         driveBackwards();
         delay(1000);
         time = millis();
     }
+    */
 }
