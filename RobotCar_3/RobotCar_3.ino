@@ -58,7 +58,7 @@ void loop() {
     // delay(100); // delay herna er kannski otharfi
 
     // Keyra bil afram
-    driveCar();
+    driveForward();
     // delay(100); // delay herna er kannski otharfi
 
     // Ef Spilari er upptekinn þá er RXspilari = 0
