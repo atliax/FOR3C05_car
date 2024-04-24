@@ -88,16 +88,16 @@ void loop() {
         int vinstri = 0;
         int haegri = 0;
 
-        delay(500); // delay herna er sennilega otharfi
+        delay(1000); // delay herna er sennilega otharfi
         turnSonar(-85, -1);
         vinstri = distanceFromSonar();
 
-        delay(2000);
+        delay(1000);
 
         turnSonar(60, -1);
         haegri = distanceFromSonar();
 
-        delay(500);
+        delay(1500);
 
         turnSonar(-12, -1);
 
