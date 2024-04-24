@@ -57,7 +57,7 @@ void setup() {
 //*************************** Keyrslulykkjan **********************
 void loop() {
     turnSonar(-12, -1);
-     delay(100); // delay herna er kannski otharfi
+    delay(100); // delay herna er kannski otharfi
 
     // Keyra bil afram
     driveForward();
@@ -80,7 +80,7 @@ void loop() {
         delay(100); // i raun 200 vegna delay(100) i stopCar()
 
         driveBackwards();
-        //delay(200);
+        // delay(200);
 
         stopCar();
         // herna er 100ms delay vegna stopCar()
@@ -88,18 +88,18 @@ void loop() {
         int vinstri = 0;
         int haegri = 0;
 
-        //delay(1000); // delay herna er sennilega otharfi
+        // delay(1000); // delay herna er sennilega otharfi
         turnSonar(-85, -1);
         delay(1000);
         vinstri = distanceFromSonar();
 
-        //delay(1000);
+        // delay(1000);
 
         turnSonar(60, -1);
         delay(1000);
         haegri = distanceFromSonar();
 
-        //delay(1500);
+        // delay(1500);
 
         turnSonar(-12, -1);
 
@@ -115,6 +115,6 @@ void loop() {
 
         driveForward();
 
-        //delay(1000); // delay herna er kannski otharfi
+        delay(1000); // delay herna er kannski otharfi
     }
 }
