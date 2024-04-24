@@ -114,16 +114,16 @@ void driveBackwards() {
     analogWrite(motorHpwm_, VgrunnH);
 }
 
-// snua til haegri
-void turnRight() {
+// snua til vinstri 
+void turnLeft() {
     digitalWrite(motorVgir_, LOW);
     digitalWrite(motorHgir_, LOW);
     analogWrite(motorVpwm_, VgrunnV);
     analogWrite(motorHpwm_, VgrunnH);
 }
 
-// snua til vinstri
-void turnLeft() {
+// snua til haegri 
+void turnRight() {
     digitalWrite(motorVgir_, HIGH);
     digitalWrite(motorHgir_, HIGH);
     analogWrite(motorVpwm_, VgrunnV);
