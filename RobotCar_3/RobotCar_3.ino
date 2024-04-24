@@ -17,8 +17,7 @@ void setup() {
     pinMode(motorHpwm_, OUTPUT);
     pinMode(motorHgir_, OUTPUT);
 
-    // Servo on digital pinna ~10
-    servoMain.attach(10);
+    servoMain.attach(servo_pin);
 
     pinMode(sonarTrigger_, OUTPUT);
 
@@ -28,38 +27,35 @@ void setup() {
     pinMode(TXspilari_, OUTPUT);
     pinMode(RXspilari_, INPUT_PULLUP);
 
-    Serial.begin(9600);
     //******************** Setja upp MDFPlayer *************************
+    Serial.begin(9600);
     mySerial.begin(9600);
-    delay(500);
+    // delay(500); // delay herna er sennilega otharfi
 
     mp3_set_volume(20);
-    delay(100);
+    // delay(100); //delay herna er sennilega otharfi
 
     mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
-    delay(5000);
+    // delay(5000); // delay herna er sennilega otharfi
 
     // mp3_play_track(1); // 1. Riding along in my automobile
     lagNr = 2;
 
     // Timar
     time = millis(); // Setur time breytuna á tíma liðinn frá starti
-    // timeX = time;
 
-    // snua SONAR beint framm, í þessum bíl er leiðrétt um X gráður - TODO
-    reiknaPulsBreidd(-5, -1);
-
-    // lengdX = lengd();
+    // snua SONAR beint fram, í þessum bíl er leiðrétt um 12 gráður - TODO
+    turnSonar(SONAR_FORWARD, -1);
 }
 
 //*************************** Keyrslulykkjan **********************
 void loop() {
-    reiknaPulsBreidd(0, -1);
-    delay(100);
+    turnSonar(SONAR_FORWARD, -1);
+    // delay(100); // delay herna er kannski otharfi
 
     // Keyra bil afram
     driveCar();
-    delay(100);
+    // delay(100); // delay herna er kannski otharfi
 
     // Ef Spilari er upptekinn þá er RXspilari = 0
     // RXspilari (D2) tengist BUSY tengi á spilara sjá mynd 17
@@ -67,44 +63,50 @@ void loop() {
         if (lagNr == 17) {
             lagNr = 1;
         }
+
         // spila naesta lag
         // mp3_play_track(lagNr++);
     }
 
     // ef það er aðskotahlutur minna en 40cm framan vid bilinn
-    while (lengd() < 40) {
-        backCar();
+    while (distanceFromSonar() < 40) {
+        stopCar();
+        delay(100); // i raun 200 vegna delay(100) i stopCar()
 
+        driveBackwards();
         delay(200);
 
         stopCar();
+        // herna er 100ms delay vegna stopCar()
 
         int vinstri = 0;
         int haegri = 0;
 
+        // delay(500); // delay herna er sennilega otharfi
+        snuaSonar(SONAR_LEFT, -1);
+        vinstri = distanceFromSonar();
+
         delay(1000);
-        reiknaPulsBreidd(-85, -1);
 
-        vinstri = lengd();
+        turnSonar(SONAR_RIGHT, -1);
+        haegri = distanceFromSonar();
 
-        delay(1000);
-        reiknaPulsBreidd(60, -1);
+        delay(500);
 
-        haegri = lengd();
-
-        delay(1500);
-        reiknaPulsBreidd(-12, -1);
+        turnSonar(SONAR_FORWARD, -1);
 
         if (vinstri > haegri) {
-            driveLeft();
+            turnLeft();
         } else {
-            driveRight();
+            turnRight();
         }
 
         // Gefa tíma til að beygja ca +/- 90°
+        // TODO - stadfesta ad timinn se godur
         delay(350);
-        driveCar();
 
-        delay(1000);
+        driveForward();
+
+        // delay(1000); // delay herna er kannski otharfi
     }
 }
