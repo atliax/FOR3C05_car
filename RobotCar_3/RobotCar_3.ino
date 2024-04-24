@@ -121,7 +121,7 @@ void loop() {
 
         delay(1000); // delay herna er kannski otharfi
 
-        // time = millis();
+        time = millis();
     }
 
     /*
