@@ -45,22 +45,15 @@ unsigned long time;
 // Reikna púlsbreidd frá gráðum og kalla síðan á servoMain.write(stefna)
 void turnSonar(int gradur, int snunAtt) // réttsaelis=1 rangsaelis=-1
 {
-    int stefna = gradur;
-
-    if (snunAtt < 0) {
-        stefna *= -1;
-    }
-
-    stefna += 90;
-
-    if (stefna < 0) {
+    int stefna;
+    if (snunAtt >= 0)
+        stefna = gradur + 90;
+    else
+        stefna = -1 * gradur + 90;
+    if (stefna < 0)
         stefna = 0;
-    }
-
-    if (stefna > 180) {
+    if (stefna > 180)
         stefna = 180;
-    }
-
     servoMain.write(stefna);
 }
 
