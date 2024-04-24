@@ -117,4 +117,10 @@ void loop() {
 
         delay(1000); // delay herna er kannski otharfi
     }
+
+    if (millis() - time >= (15 * 1000)) {
+        stopCar();
+        driveBackwards();
+        delay(1000);
+    }
 }
