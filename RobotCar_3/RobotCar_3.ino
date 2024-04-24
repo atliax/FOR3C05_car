@@ -30,17 +30,19 @@ void setup() {
     //******************** Setja upp MDFPlayer *************************
     Serial.begin(9600);
     mySerial.begin(9600);
-    // delay(500); // delay herna er sennilega otharfi
+    delay(500); // delay herna er sennilega otharfi
 
     mp3_set_volume(20);
-    // delay(100); //delay herna er sennilega otharfi
+    delay(100); // delay herna er sennilega otharfi
 
     mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
-    // delay(5000); // delay herna er sennilega otharfi
+    delay(5000);        // delay herna er sennilega otharfi
 
+    /*
     while (digitalRead(RXspilari_) == 0) {
         // bida eftir að hljod klari ad spilast
     }
+    */
 
     // mp3_play_track(1); // 1. Riding along in my automobile
     lagNr = 2;
@@ -55,11 +57,11 @@ void setup() {
 //*************************** Keyrslulykkjan **********************
 void loop() {
     turnSonar(SONAR_FORWARD, -1);
-    // delay(100); // delay herna er kannski otharfi
+     delay(100); // delay herna er kannski otharfi
 
     // Keyra bil afram
     driveForward();
-    // delay(100); // delay herna er kannski otharfi
+    delay(100); // delay herna er kannski otharfi
 
     // Ef Spilari er upptekinn þá er RXspilari = 0
     // RXspilari (D2) tengist BUSY tengi á spilara sjá mynd 17
@@ -86,7 +88,7 @@ void loop() {
         int vinstri = 0;
         int haegri = 0;
 
-        // delay(500); // delay herna er sennilega otharfi
+        delay(500); // delay herna er sennilega otharfi
         turnSonar(SONAR_LEFT, -1);
         vinstri = distanceFromSonar();
 
@@ -111,6 +113,6 @@ void loop() {
 
         driveForward();
 
-        // delay(1000); // delay herna er kannski otharfi
+        delay(1000); // delay herna er kannski otharfi
     }
 }
