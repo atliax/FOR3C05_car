@@ -36,14 +36,13 @@ void setup() {
     delay(100); // delay herna er sennilega otharfi
 
     mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
-    //delay(5000);        // delay herna er sennilega otharfi
+    delay(5000);        // delay herna er sennilega otharfi
 
-    while (digitalRead(RXspilari_) == 0) {
+    /*while (digitalRead(RXspilari_) == 0) {
         delay(100);
-    }
+    }*/
 
-    mp3_play_track(1); // 1. Riding along in my automobile
-    lagNr = 2;
+    mp3_play_track(lagNr++); // 1. Riding along in my automobile
 
     // Timar
     time = millis(); // Setur time breytuna á tíma liðinn frá starti

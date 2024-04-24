@@ -25,7 +25,7 @@ int RXspilari_ = 2; // Tekur við skipunum frá mp3 spilara
 
 int sonarTrigger_ = 7; // Sendir 10us breiðan 40kHz sónarpúls
 int sonarEcho_ = 8;    // Tekur á móti SONAR púlsinum
-int lagNr;             // Synir hvaða lag er spilad
+int lagNr = 1;             // Synir hvaða lag er spilad
 
 /*
 #define SONAR_LEFT -85
