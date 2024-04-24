@@ -90,14 +90,16 @@ void loop() {
 
         //delay(1000); // delay herna er sennilega otharfi
         turnSonar(-85, -1);
+        delay(1000);
         vinstri = distanceFromSonar();
 
-        delay(1000);
+        //delay(1000);
 
         turnSonar(60, -1);
+        delay(2000);
         haegri = distanceFromSonar();
 
-        delay(1500);
+        //delay(1500);
 
         turnSonar(-12, -1);
 
