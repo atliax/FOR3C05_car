@@ -90,7 +90,7 @@ void loop() {
         turnSonar(SONAR_LEFT, -1);
         vinstri = distanceFromSonar();
 
-        delay(1000);
+        delay(2000);
 
         turnSonar(SONAR_RIGHT, -1);
         haegri = distanceFromSonar();
