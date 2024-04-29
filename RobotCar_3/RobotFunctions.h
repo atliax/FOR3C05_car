@@ -31,14 +31,7 @@ int lagNr = 1;             // Synir hvaða lag er spilad
 #define SONAR_FORWARD -12
 #define SONAR_RIGHT 60
 
-//*************************** Lengdir og Tímar *********************************
-
-// unsigned int lengdV;
-// unsigned int lengdH;
-// unsigned int lengdMax = 0;
-// int lengdX = 0;
 unsigned long time; 
-// unsigned long timeX;
 
 // ****************************** Föll *****************************************
 

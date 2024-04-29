@@ -30,35 +30,30 @@ void setup() {
     //******************** Setja upp MDFPlayer *************************
     Serial.begin(9600);
     mySerial.begin(9600);
-    delay(500); // delay herna er sennilega otharfi
+    delay(500);
 
     mp3_set_volume(20);
-    delay(100); // delay herna er sennilega otharfi
+    delay(100);
 
     mp3_play_track(17); // 17. Bíll í gang (gamli bíllinn)
-    delay(5000);        // delay herna er sennilega otharfi
-
-    /*while (digitalRead(RXspilari_) == 0) {
-        delay(100);
-    }*/
+    delay(5000);
 
     mp3_play_track(lagNr++); // 1. Riding along in my automobile
 
-    // Timar
     time = millis(); // Setur time breytuna á tíma liðinn frá starti
 
-    // snua SONAR beint fram, í þessum bíl er leiðrétt um 12 gráður - TODO
+    // snua SONAR beint fram, í þessum bíl er leiðrétt um 12 gráður
     turnSonar(SONAR_FORWARD, -1);
 }
 
 //*************************** Keyrslulykkjan **********************
 void loop() {
     turnSonar(SONAR_FORWARD, -1);
-    delay(100); // delay herna er kannski otharfi
+    delay(100);
 
     // Keyra bil afram
     driveForward();
-    delay(100); // delay herna er kannski otharfi
+    delay(100);
 
     // Ef Spilari er upptekinn þá er RXspilari = 0
     // RXspilari (D2) tengist BUSY tengi á spilara sjá mynd 17
@@ -84,23 +79,18 @@ void loop() {
         }
 
         stopCar();
-        // herna er 100ms delay vegna stopCar()
+        // herna er 100ms delay i endanum a stopCar()
 
         int vinstri = 0;
         int haegri = 0;
 
-        // delay(1000); // delay herna er sennilega otharfi
         turnSonar(SONAR_LEFT, -1);
         delay(1000);
         vinstri = distanceFromSonar();
 
-        // delay(1000);
-
         turnSonar(SONAR_RIGHT, -1);
         delay(1000);
         haegri = distanceFromSonar();
-
-        // delay(1500);
 
         turnSonar(SONAR_FORWARD, -1);
 
@@ -111,7 +101,6 @@ void loop() {
         }
 
         // Gefa tíma til að beygja ca +/- 90°
-        // TODO - stadfesta ad timinn se godur
         delay(375);
 
         driveForward();
@@ -120,13 +109,4 @@ void loop() {
 
         time = millis();
     }
-
-    /*
-    if (millis() - time >= (15 * 1000)) {
-        stopCar();
-        driveBackwards();
-        delay(1000);
-        time = millis();
-    }
-    */
 }
